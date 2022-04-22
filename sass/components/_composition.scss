@@ -1,0 +1,39 @@
+@use "../abstract" as *;
+
+.composition {
+    position: relative;
+    &__photo {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($black, 0.4);
+
+        z-index: 5;
+        transition: all 0.2s;
+
+        outline-offset: 2rem;
+
+        position: absolute;
+        &--p1 {
+            left: 0;
+            top: -2rem;
+        }
+        &--p2 {
+            top: 2rem;
+            right: 0;
+        }
+        &--p3 {
+            left: 20%;
+            top: 10rem;
+        }
+
+        &:hover {
+            outline: 1.5rem solid $dark-green;
+
+            transform: scale(1.05) translateY(-0.5rem);
+            box-shadow: 0 2rem 5rem rgba($black, 0.5);
+            z-index: 10;
+        }
+    }
+    &:hover &__photo:not(:hover) {
+        transform: scale(0.95);
+    }
+}

@@ -1,0 +1,100 @@
+@use "../abstract" as *;
+
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: $font-default;
+
+        display: inline-block;
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+
+        position: relative;
+
+        transition: all 0.2s;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        border-radius: 100px;
+
+        z-index: -1;
+
+        transition: all 0.4s;
+    }
+
+    &:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0 1rem 2rem rgba($black, 0.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+
+    &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($black, 0.2);
+    }
+
+    &--white {
+        background-color: $white;
+        color: $grey;
+
+        &::after {
+            background: $white;
+        }
+    }
+    &--green {
+        background-color: $light-green;
+        color: $white;
+
+        &::after {
+            background: $white;
+        }
+    }
+
+    &--animated {
+        animation: moveInBottom 0.5s ease-out 0.75s;
+        animation-fill-mode: backwards;
+    }
+
+    &--text {
+        &:link,
+        &:visited {
+            display: inline-block;
+            font-size: $font-default;
+
+            color: $light-green;
+
+            text-decoration: none;
+            border-bottom: 1px solid $light-green;
+
+            padding: 0.3rem;
+
+            transition: all 0.2s;
+        }
+
+        &:hover {
+            background-color: $light-green;
+            color: $white;
+            box-shadow: 0 1rem 2rem rgba($black, 0.15);
+            transform: translateY(-2px);
+        }
+        &:active {
+            box-shadow: 0 0.5rem 1rem rgba($black, 0.15);
+            transform: translateY(0);
+        }
+    }
+}

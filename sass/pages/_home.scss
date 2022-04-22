@@ -1,0 +1,52 @@
+@use "../abstract" as *;
+
+.section-about {
+    background-color: $light-grey-1;
+    padding: 25rem 0;
+    margin-top: -20vh;
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    display: inline-block;
+
+    background: linear-gradient(to right, $light-green, $dark-green);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.2rem;
+
+    transition: transform 0.2s;
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: 0.5rem 1rem 2rem rgba($black, 0.2);
+    }
+}
+
+.section-features {
+    padding: 20rem 0;
+
+    background-image: linear-gradient(
+            to right bottom,
+            rgba($light-green, 0.8),
+            rgba($dark-green, 0.8)
+        ),
+        url("../img/nat-4.jpg");
+    background-size: cover;
+
+    transform: skewY(-7deg);
+    margin-top: -15rem;
+
+    & > * {
+        transform: skewY(7deg);
+    }
+}
+
+.section-tours {
+    background-color: $light-grey-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -15rem;
+}
